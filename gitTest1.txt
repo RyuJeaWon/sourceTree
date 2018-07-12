@@ -1,0 +1,66 @@
+﻿git commit
+
+git branch bugFix - 버그픽스라는 새브랜치를 만든다.
+
+git checkout bugFix - 버그픽스로 이동
+
+git checkout -b bugFix - 버그픽스 브런치를 만들고 이동
+
+git checkout master - master로 이동
+
+
+git checkout bugFix; git merge bugFix
+
+git rebase master
+git rebase bugFix
+
+git checkout C4^
+
+git branch -f master HEAD~3
+
+
+git reset HEAD~1 -전으로 돌아간다 그대신 상속받은아이는 없어진다 시간 되돌리기
+git revert HEAD - 전 상태로 돌아가지만 상속된건 삭제 되지 않고 아래에 클론이 생긴다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+git cherry-pick [c2] [c4] - 입양해오기  아래에 있는 일련의 커밋들에 대한 복사본을 만들겠다.
+-?? 이걸 왜 쓰지???
+
+git rebase -i HEAD~4 - 숫자는 가지를 칠 상위 조상의 순번을 가르킨다.
+픽 앤드 드래그로 순서와 갯수를 바꾸면서 카피한다.
+
+
+commit -amend 커밋내용을 정정한다.  commit --amend
+
+git tag [태그] [태그할곳] - 태그하곳 싶은곳에 태그해줌
+
+git descride <ref>
+<ref>에는 commit을 의미하는 그 어떤것이던 쓸 수 있습니다. 만약 ref를 특정 지어주지 않으면, git은 그냥 지금 체크아웃된곳을 사용합니다 (HEAD).
+
+명령어의 출력은 다음과 같은 형태로 나타납니다:
+
+<tag>_<numCommits>_g<hash>
+
+git rebase master bugFix;
+git rebase bugFix side;
+git rebase side another;
+git rebase another master
+
+git cherry-pick c4 c3 c2
